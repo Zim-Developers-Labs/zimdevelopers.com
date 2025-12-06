@@ -1,6 +1,6 @@
 <p align="center">
  <a href="https://github.com/zimdevlabs/zimdevelopers.com">
-   <img src="https://github.com/zimdevlabs/.github/blob/main/profile/banner-alt.png" alt="Logo">
+   <img src="https://github.com/zim-developers-labs/.github/blob/main/profile/banner-alt.png" alt="Logo">
   </a>
 </p>
 
