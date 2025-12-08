@@ -5,10 +5,7 @@
 </p>
 
 <h4 align="center">
-  <a href="https://www.zimdevelopers.com">Developer Dashboard</a> |
-  <a href="https://www.zimdevelopers.com/blog">Blog</a> |
-  <a href="https://docs.zimdevelopers.com">Documentation</a> |
-  <a href="https://www.zimdevelopers.com/pro">Zim Developers Pro</a>
+  <a href="https://www.zimdevelopers.com">Developer Home Page</a> |
 </h4>
 
 <div align="center">
