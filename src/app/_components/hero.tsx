@@ -40,7 +40,7 @@ export default function HomePageHero() {
           </h1>
           <p className="mb-4 max-w-md sm:mb-10">
             It's time to stop complaining about bad software and make it
-            ourselves. Join or sponsor the movement today.
+            ourselves. Join the movement today.
           </p>
           <div className="flex items-center gap-2">
             <Button

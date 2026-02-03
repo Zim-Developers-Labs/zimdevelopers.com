@@ -1,8 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { sponsors } from './projects';
-import { Button } from '@/components/ui/button';
+import { projects } from './projects';
 import Container from '@/components/container';
 import Link from 'next/link';
 import { ExternalLinkIcon, LockIcon } from 'lucide-react';
@@ -10,7 +9,7 @@ import { RankIcon } from '@/components/ranking/rank-icon';
 import RanksDialog from '@/components/ranking/ranks-dialog';
 import { Icons } from '@/components/icons';
 
-export default function SponsorsPageComponents() {
+export default function ProjectsPageComponents() {
   return (
     <div className="relative overflow-x-hidden">
       <div className="screen-line-after h-6 border-y border-zinc-200 before:absolute before:-z-1 before:h-6 before:w-screen before:bg-[repeating-linear-gradient(315deg,var(--color-zinc-300)_0,var(--color-zinc-300)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px]" />
@@ -18,14 +17,14 @@ export default function SponsorsPageComponents() {
         <h1 className="mb-4 text-4xl font-semibold">Projects</h1>
 
         <p className="">
-          Grateful for the support that helps us grow and maintain high-quality
-          projects.
+          Grateful for the projects that help us grow and gain high-value
+          skills.
         </p>
       </Container>
       <div className="screen-line-after h-6 border-y border-zinc-200 before:absolute before:-z-1 before:h-6 before:w-screen before:bg-[repeating-linear-gradient(315deg,var(--color-zinc-300)_0,var(--color-zinc-300)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px]" />
       <Container>
         <div className="my-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {sponsors.map((item) => (
+          {projects.map((item) => (
             <div
               key={item.name}
               className={cn(
@@ -80,7 +79,7 @@ export default function SponsorsPageComponents() {
             </div>
           ))}
 
-          {Array.from({ length: Math.max(0, 8 - sponsors.length) }).map(
+          {Array.from({ length: Math.max(0, 8 - projects.length) }).map(
             (_, i) => (
               <PlaceholderLogo key={`placeholder-${i}`} />
             ),

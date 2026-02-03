@@ -69,7 +69,7 @@ export default function Header() {
             </span>
           </Button>
           <Button asChild variant="outline" className="flex items-center">
-            <Link href="https://github.com/Zim-Developers-Labs">
+            <Link target="_blank" href="https://github.com/Zim-Developers-Labs">
               <Icons.githubIcon className="size-6" />
               <span className="text-xs">{stars}</span>
             </Link>

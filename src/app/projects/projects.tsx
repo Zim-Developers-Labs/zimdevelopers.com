@@ -175,7 +175,7 @@ const logoIcons = {
   ),
 };
 
-export const sponsors = [
+export const projects = [
   {
     name: 'TheWord',
     homepage: 'https://www.theword.fyi/',

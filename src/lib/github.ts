@@ -1,7 +1,7 @@
 export async function getGitHubStars(repo: string) {
   try {
     const res = await fetch(`https://api.github.com/repos/${repo}`, {
-      next: { revalidate: 120 }, // Revalidate every 2 minutes
+      next: { revalidate: 3600 }, // Revalidate every 1 hour
     });
 
     if (!res.ok) return 0;

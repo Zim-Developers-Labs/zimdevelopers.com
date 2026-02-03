@@ -1,5 +1,5 @@
-import SponsorsPageComponents from "./components";
+import ProjectsPageComponents from './components';
 
-export default function SponsorsPage() {
-  return <SponsorsPageComponents />;
+export default function ProjectsPage() {
+  return <ProjectsPageComponents />;
 }
