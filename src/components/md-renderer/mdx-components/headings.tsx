@@ -1,69 +1,38 @@
-import { Text } from "@chakra-ui/react";
-import { Linkify } from "@lib/renderer"
-import styled from "styled-components";
-
-const H1 = ({children}:{children: string}) : React.ReactNode => {
-
-  const id = Linkify(children)
-
+const H1 = ({ children }: any) => {
   return (
-    <Text as='h1'
-    fontWeight='600'
-    fontSize={['1.6rem', '1.6rem', '2rem']}
-    marginBottom='1.25rem'
-    marginTop='-5.3rem'
-    paddingTop='7.5rem'
-    id={id}>
-      {children}
-    </Text>
-  )
-}
+    <h1 className="mb-5 text-[1.875rem] font-[800] md:text-4xl">{children}</h1>
+  );
+};
 
-const H2 = ({children}:{children: string}) : React.ReactNode => {
-
-  const id = Linkify(children)
-
+const H2 = ({ children }: any) => {
   return (
-    <Text as='h2'
-    fontWeight='600'
-    fontSize='1.875rem'
-    marginBottom='1.25rem'
-    marginTop='-5.3rem'
-    paddingTop='7.5rem'
-    id={id}>
+    <h2 className="-mt-20 mb-5 pt-28 text-[1.875rem] font-[600] md:text-3xl">
       {children}
-    </Text>
-  )
-}
+    </h2>
+  );
+};
 
-const H3 = ({children}:{children: string}) : React.ReactNode => {
-
-  const id = Linkify(children)
-
+const H3 = ({ children }: any) => {
   return (
-    <Text as='h3'
-    fontWeight='500'
-    fontSize='1.6rem'
-    marginBottom='1.25rem'
-    marginTop='-5.3rem'
-    paddingTop='7.5rem'
-    id={id}>
+    <h3 className="-mt-20 mb-5 pt-28 text-[1.6rem] font-[500] md:text-2xl">
       {children}
-    </Text>
-  )
-}
+    </h3>
+  );
+};
 
-const H4 = styled.h4`
-  font-size: 1.375rem;
-  margin-bottom: 1.25rem;
-  color: teal;
-`;
+const H4 = ({ children }: any) => {
+  return (
+    <h4 className="text-primaryColor mb-4 text-[1.6rem] font-[500] md:text-xl">
+      {children}
+    </h4>
+  );
+};
 
 const Headings = {
   h1: H1,
   h2: H2,
   h3: H3,
-  h4: H4
-}
+  h4: H4,
+};
 
 export default Headings;

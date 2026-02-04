@@ -64,25 +64,42 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   // 2. Construct path for the markdown content
-  const filePath = path.join(
+  const articleFilePath = path.join(
     process.cwd(),
     'content/blog', // ⚠️ Ensure this matches your folder structure
     articleId, // Use articleId from params, or article.id if they differ
     'article.md',
   );
 
+  const metaFilePath = path.join(
+    process.cwd(),
+    'content/blog',
+    articleId,
+    'meta.json',
+  );
+
   let ArticleContent = '';
+  let editors: { name: string; imageUrl: string }[] = [];
 
   try {
-    ArticleContent = fs.readFileSync(filePath, 'utf8');
+    ArticleContent = fs.readFileSync(articleFilePath, 'utf8');
+    const metaContent = fs.readFileSync(metaFilePath, 'utf8');
+    const meta = JSON.parse(metaContent);
+    editors = meta.editors || [];
   } catch (error) {
-    console.error(`[Page Error] Failed to read article.md at: ${filePath}`);
+    console.error(
+      `[Page Error] Failed to read article files for: ${articleId}`,
+    );
     return notFound();
   }
 
   // 3. PASS THE CONTENT to the component
   // Assuming ArticlePageComponents accepts a prop like 'content' or 'markdown'
   return (
-    <ArticlePageComponents ArticleContent={ArticleContent} article={article} />
+    <ArticlePageComponents
+      ArticleContent={ArticleContent}
+      article={article}
+      editors={editors}
+    />
   );
 }

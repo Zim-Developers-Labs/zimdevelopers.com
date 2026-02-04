@@ -10,6 +10,7 @@ export type ArticleType = {
   createdAt: string;
   updatedAt: string;
   formattedCreatedAt?: string;
+  formattedUpdatedAt?: string;
   imageUrl: string;
   isDraft: boolean;
   conflicts?: string[];

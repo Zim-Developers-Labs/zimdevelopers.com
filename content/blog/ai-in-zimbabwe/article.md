@@ -1,4 +1,9 @@
-![](/covers/ai-in-zimbabwe.webp)
+<figure>
+  <img src="/covers/ai-in-zimbabwe.webp" alt="AI in Zimbabwe Article Thumbnail">
+  <figcaption>
+    Image credit: Tino Mazorodze
+  </figcaption>
+</figure>
 
 Just as in any another country, in Zimbabwe AI is mostly used by developers. AI though overhyped and burning millions over night has changed many lives for better and for worse. What is AI anyways? A question that we might take lightly but some people still have no idea what AI is in 2026.
 
