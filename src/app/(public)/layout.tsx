@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import './globals.css';
+import '../globals.css';
 import LaunchBanner from '@/components/banners.tsx/launch';
 import Header from '@/components/header';
 
@@ -15,9 +15,6 @@ export const metadata: Metadata = {
   title: 'Zim Developers Community',
   description:
     'A group of developers working towards building a vibrant developer community and ultimately a better tech ecosystem in Zimbabwe.',
-  openGraph: {
-    images: '/banner.webp',
-  },
 };
 
 export default function RootLayout({

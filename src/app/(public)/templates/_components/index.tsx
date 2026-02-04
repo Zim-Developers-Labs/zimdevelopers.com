@@ -76,7 +76,7 @@ const useCasesByPlatform: Record<
 };
 
 const frameworksByPlatform: Record<Platform, string[]> = {
-  web: ['All', 'Next.js', 'Astro', 'Remix', 'SvelteKit', 'Nuxt'],
+  web: ['All', 'Next.js', 'Vue', 'Laravel', 'Django', 'Angular'],
   mobile: ['All', 'React Native', 'Flutter', 'Swift UI', 'Kotlin'],
   desktop: ['All', 'Electron', 'Tauri', 'Wails', 'Neutralino'],
 };
