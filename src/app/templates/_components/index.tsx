@@ -135,6 +135,12 @@ export default function TemplatesPageComponents() {
     setActiveFramework('All');
   };
 
+  const groupLink = 'https://chat.whatsapp.com/FfXS39iLv7k36jrskKjOfX';
+
+  const handleButtonClick = () => {
+    window.open(groupLink, '_blank');
+  };
+
   return (
     <div className="min-h-screen">
       <div className="relative overflow-hidden">
@@ -143,7 +149,7 @@ export default function TemplatesPageComponents() {
           <h1 className="mb-4 text-4xl font-semibold">Choose your Template</h1>
 
           <p className="">
-            Speedstart your development with starter templates from our
+            Quickstart your development with starter templates from our
             community.
           </p>
           {/* Platform Tabs */}
@@ -350,15 +356,9 @@ export default function TemplatesPageComponents() {
                       Clear filters
                     </Button>
                   )}
-                  <Button asChild>
-                    <a
-                      href="https://discord.gg/example"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Join Community
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
+                  <Button onClick={handleButtonClick}>
+                    Join Community
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
               </div>
