@@ -2,66 +2,54 @@ import Container from '@/components/container';
 import { RankIcon } from '@/components/ranking/rank-icon';
 import { getCurrentRank } from '@/components/ranking/ranks';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Trophy, Star } from 'lucide-react';
+import Link from 'next/link';
 
 const members = [
   {
     id: 1,
     name: 'Tino Mazorodze',
-    username: '@tinomazorodze',
+    url: 'https://github.com/tinomazorodze',
     avatar: '/avatars/tech.png',
-    project: 'DevFlow CLI',
-    description: 'A blazing fast CLI tool for scaffolding modern web projects',
     impactPoints: 15420,
     rank: 1,
   },
   {
     id: 2,
     name: 'Tino Muzovaka',
-    username: '@tinomuzovaka',
+    url: 'https://github.com/tinomuzovaka',
     avatar: '/avatars/tino.png',
-    project: 'ReactQuery Pro',
-    description: 'Advanced data fetching hooks with built-in caching',
     impactPoints: 12350,
     rank: 2,
   },
   {
     id: 3,
     name: 'Calvin Bere',
-    username: '@calvinbere',
+    url: 'https://github.com/calvinbere',
     avatar: '/avatars/calvin.png',
-    project: 'CSS Grid Builder',
-    description: 'Visual tool for creating complex CSS Grid layouts',
     impactPoints: 9800,
     rank: 3,
   },
   {
     id: 4,
     name: 'Prince Ruswa',
-    username: '@princeruswa',
+    url: 'https://github.com/princeruswa',
     avatar: '/avatars/prince.png',
-    project: 'API Mock Server',
-    description: 'Zero-config mock API server for frontend development',
     impactPoints: 8200,
     rank: 4,
   },
   {
     id: 5,
     name: 'Blessings K.',
-    username: '@priyatech',
+    url: 'https://github.com/priyatech',
     avatar: '/avatars/blessings-k.png',
-    project: 'FormForge',
-    description: 'Type-safe form builder with validation',
     impactPoints: 7100,
     rank: 5,
   },
   {
     id: 6,
     name: 'Ngaavongwe N.',
-    username: '@ngaavongwe',
+    url: 'https://github.com/ngaavongwe',
     avatar: '/avatars/nga.png',
-    project: 'Theme Engine',
-    description: 'Dynamic theming system for React applications',
     impactPoints: 5600,
     rank: 6,
   },
@@ -125,9 +113,12 @@ export default function HallOfFamePage() {
                     />
                   </div>
                 </div>
-                <p className="text-foreground mt-4 text-center text-sm font-semibold sm:text-base">
+                <Link
+                  href={member.url}
+                  className="text-foreground mt-4 text-center text-sm font-semibold hover:underline sm:text-base"
+                >
                   {member.name}
-                </p>
+                </Link>
                 <p className="text-muted-foreground text-xs">
                   {member.impactPoints.toLocaleString()} pts
                 </p>
@@ -168,7 +159,12 @@ export default function HallOfFamePage() {
                   </div>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-foreground font-medium">{member.name}</p>
+                  <Link
+                    href={member.url}
+                    className="text-foreground font-medium hover:underline"
+                  >
+                    {member.name}
+                  </Link>
                 </div>
                 <span className="text-muted-foreground flex items-center gap-1.5 text-sm">
                   {member.impactPoints.toLocaleString()} pts
