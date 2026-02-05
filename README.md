@@ -1,6 +1,6 @@
 <p align="center">
- <a href="https://github.com/zimdevlabs/zimdevelopers.com">
-   <img src="https://github.com/zimdevlabs/.github/blob/main/profile/banner-alt.png" alt="Logo">
+ <a href="https://github.com/Zim-Developers-Labs/zimdevelopers.com">
+   <img src="https://github.com/Zim-Developers-Labs/.github/blob/main/profile/banner-alt.png" alt="Logo">
   </a>
 </p>
 
@@ -19,7 +19,7 @@
 <br />
 
 <p align="center">
-  <a href="https://github.com/zimdevlabs/zimdevelopers.com/blob/main/LICENSE">
+  <a href="https://github.com/Zim-Developers-Labs/zimdevelopers.com/blob/main/LICENSE">
     <img alt="Zim Developers is released under the MIT license." src="https://img.shields.io/badge/license-MIT-blue.svg"  />
   </a>
   <a href="https://docs.zimdevelopers.com/docs/introduction/contributing">
@@ -49,7 +49,7 @@ More features will be announced as the project progresses.
 
 > Have a look at [contribution docs](./CONTRIBUTING.md) for how to contribute to the project
 
-- Missing something or found a bug? [Report here](https://github.com/zimdevlabs/zimdevelopers.com/issues).
+- Missing something or found a bug? [Report here](https://github.com/Zim-Developers-Labs/zimdevelopers.com/issues).
 - Add new articles to the blog
 - Suggest changes to existing files
 - Discuss ideas in issues
@@ -57,7 +57,7 @@ More features will be announced as the project progresses.
 
 Here are some people who have contributed to Zim Developers so far ❤:
 
-<a href="https://github.com/zimdevlabs/zimdevelopers.com/graphs/contributors">
+<a href="https://github.com/Zim-Developers-Labs/zimdevelopers.com/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=zimdevlabs/zimdevelopers.com" />
 </a>
 
@@ -69,5 +69,5 @@ Stay updated with our progress and connect with the community through our social
 - Instagram: [@zimdevlabs](https://instagram.com/zimdevlabs)
 - LinkedIn: [ZimDevLabs](https://linkedin.com/company/zimdevlabs)
 - YouTube: [ZimDevLabs](https://youtube.com/zimdevlabs)
-- GitHub: [zimdevlabs](https://github.com/zimdevlabs)
+- GitHub: [zimdevlabs](https://github.com/Zim-Developers-Labs)
 - Patreon: [ZimDevLabs](https://patreon.com/zimdevlabs)
