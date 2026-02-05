@@ -16,7 +16,7 @@ const members = [
   {
     id: 2,
     name: 'Tino Muzovaka',
-    url: 'https://github.com/tinomuzovaka',
+    url: '#',
     avatar: '/avatars/tino.png',
     impactPoints: 12350,
     rank: 2,
@@ -24,7 +24,7 @@ const members = [
   {
     id: 3,
     name: 'Calvin Bere',
-    url: 'https://github.com/calvinbere',
+    url: '#',
     avatar: '/avatars/calvin.png',
     impactPoints: 9800,
     rank: 3,
@@ -32,7 +32,7 @@ const members = [
   {
     id: 4,
     name: 'Prince Ruswa',
-    url: 'https://github.com/princeruswa',
+    url: '#',
     avatar: '/avatars/prince.png',
     impactPoints: 8200,
     rank: 4,
@@ -40,7 +40,7 @@ const members = [
   {
     id: 5,
     name: 'Blessings K.',
-    url: 'https://github.com/priyatech',
+    url: '#',
     avatar: '/avatars/blessings-k.png',
     impactPoints: 7100,
     rank: 5,
@@ -48,7 +48,7 @@ const members = [
   {
     id: 6,
     name: 'Ngaavongwe N.',
-    url: 'https://github.com/ngaavongwe',
+    url: '#',
     avatar: '/avatars/nga.png',
     impactPoints: 5600,
     rank: 6,
