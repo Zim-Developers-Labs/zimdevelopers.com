@@ -23,7 +23,7 @@ export default function ChangeLogPageComponents() {
       </div>
       <Container className="py-10">
         <ProjectsStatusCard />
-        <div className="mt-10">
+        <div className="mt-6">
           <h2 className="mb-6 text-lg font-semibold text-zinc-900">
             Recent Changes
           </h2>
