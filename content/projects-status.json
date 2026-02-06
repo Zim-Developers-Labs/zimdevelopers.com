@@ -1,0 +1,44 @@
+[
+  {
+    "project": "TheWord",
+    "description": "Private",
+    "status": "Halfway through",
+    "currentWork": "Private",
+    "tryUrl": null
+  },
+  {
+    "project": "Zim Developers Blog",
+    "description": "Private",
+    "status": "Almost Done",
+    "currentWork": "Private",
+    "tryUrl": null
+  },
+  {
+    "project": "IBZIM",
+    "description": "Private",
+    "status": "Recently Started",
+    "currentWork": "Private",
+    "tryUrl": null
+  },
+  {
+    "project": "Xfinity Pros Inc.",
+    "description": "Private",
+    "status": "Collect User Feedback",
+    "currentWork": "Private",
+    "tryUrl": "https://www.xfinitypros.com/"
+  },
+  {
+    "project": "Rapid Range",
+    "description": "Private",
+    "status": "Recently Started",
+    "currentWork": "Private",
+    "tryUrl": null
+  },
+  {
+    "project": "Peya Peya",
+    "description": "Private",
+    "status": "Halfway through",
+    "currentWork": "Private",
+    "tryUrl": null
+  }
+]
