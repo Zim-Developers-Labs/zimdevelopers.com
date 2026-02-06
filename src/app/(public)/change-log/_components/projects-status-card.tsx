@@ -46,6 +46,8 @@ const statusConfig: Record<
     bg: string;
     barColor: string;
     progressWidth: string;
+    overviewBg: string;
+    overviewIcon: string;
   }
 > = {
   "Recently Started": {
@@ -54,6 +56,8 @@ const statusConfig: Record<
     bg: "bg-zinc-800",
     barColor: "bg-zinc-500",
     progressWidth: "w-1/5",
+    overviewBg: "bg-zinc-100",
+    overviewIcon: "text-zinc-500",
   },
   "Halfway through": {
     icon: LoaderCircleIcon,
@@ -61,6 +65,8 @@ const statusConfig: Record<
     bg: "bg-teal-950",
     barColor: "bg-teal-500",
     progressWidth: "w-1/2",
+    overviewBg: "bg-teal-50",
+    overviewIcon: "text-teal-600",
   },
   "Almost Done": {
     icon: RocketIcon,
@@ -68,6 +74,8 @@ const statusConfig: Record<
     bg: "bg-teal-950",
     barColor: "bg-teal-400",
     progressWidth: "w-4/5",
+    overviewBg: "bg-teal-50",
+    overviewIcon: "text-teal-500",
   },
   "Collect User Feedback": {
     icon: MessageSquareIcon,
@@ -75,6 +83,8 @@ const statusConfig: Record<
     bg: "bg-amber-950",
     barColor: "bg-amber-400",
     progressWidth: "w-full",
+    overviewBg: "bg-amber-50",
+    overviewIcon: "text-amber-600",
   },
 };
 
@@ -87,25 +97,83 @@ export function ProjectsStatusCard() {
     setExpandedProject((prev) => (prev === projectName ? null : projectName));
   }
 
+  const statusCounts = {
+    "Recently Started": 0,
+    "Halfway through": 0,
+    "Almost Done": 0,
+    "Collect User Feedback": 0,
+  } as Record<ProjectStatus["status"], number>;
+
+  for (const p of projects) {
+    statusCounts[p.status]++;
+  }
+
+  const statuses: ProjectStatus["status"][] = [
+    "Recently Started",
+    "Halfway through",
+    "Almost Done",
+    "Collect User Feedback",
+  ];
+
   return (
     <>
-      <button
-        onClick={() => setOpen(true)}
-        className="group flex w-full cursor-pointer items-center gap-3 rounded-lg bg-zinc-900 px-4 py-3 text-left transition-colors hover:bg-zinc-800"
-      >
-        <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-zinc-800 text-teal-400 transition-colors group-hover:bg-zinc-700">
-          <HammerIcon className="size-4" />
-        </span>
-        <span className="flex flex-1 flex-col">
-          <span className="text-sm font-medium text-zinc-100">
-            Currently Being Worked On
+      <div>
+        <button
+          onClick={() => setOpen(true)}
+          className="group flex w-full cursor-pointer items-center gap-3 rounded-t-lg bg-zinc-900 px-4 py-3 text-left transition-colors hover:bg-zinc-800"
+        >
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-zinc-800 text-teal-400 transition-colors group-hover:bg-zinc-700">
+            <HammerIcon className="size-4" />
           </span>
-          <span className="text-xs text-zinc-500">
-            {projects.length} active projects
+          <span className="flex flex-1 flex-col">
+            <span className="text-sm font-medium text-zinc-100">
+              Currently Being Worked On
+            </span>
+            <span className="text-xs text-zinc-500">
+              {projects.length} active projects
+            </span>
           </span>
-        </span>
-        <ChevronDownIcon className="size-4 text-zinc-500 transition-transform group-hover:text-zinc-400" />
-      </button>
+          <ChevronDownIcon className="size-4 text-zinc-500 transition-transform group-hover:text-zinc-400" />
+        </button>
+
+        <div className="grid grid-cols-2 rounded-b-lg border-x border-b border-zinc-200 lg:grid-cols-4">
+          {statuses.map((status, i) => {
+            const config = statusConfig[status];
+            const StatusIcon = config.icon;
+            const count = statusCounts[status];
+
+            return (
+              <div
+                key={status}
+                className={cn(
+                  "flex items-center gap-3 px-4 py-3",
+                  i < 2 && "border-b border-zinc-200 lg:border-b-0",
+                  i % 2 === 0 && "border-r border-zinc-200",
+                  i === 1 && "lg:border-r lg:border-zinc-200",
+                  i === 2 && "lg:border-r lg:border-zinc-200"
+                )}
+              >
+                <span
+                  className={cn(
+                    "flex size-8 shrink-0 items-center justify-center rounded-full",
+                    config.overviewBg
+                  )}
+                >
+                  <StatusIcon className={cn("size-3.5", config.overviewIcon)} />
+                </span>
+                <div className="flex flex-col">
+                  <span className="text-lg font-semibold text-zinc-900">
+                    {count}
+                  </span>
+                  <span className="text-[11px] leading-tight text-zinc-500">
+                    {status}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
