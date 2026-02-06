@@ -143,7 +143,10 @@ export function ProjectsStatusCard() {
               {projects.length} active projects
             </span>
           </span>
-          <ChevronDownIcon className="size-4 text-zinc-500 transition-transform group-hover:text-zinc-400" />
+          <span className="flex items-center gap-1 text-xs text-zinc-500 transition-colors group-hover:text-zinc-400">
+            View status
+            <ChevronDownIcon className="size-3.5" />
+          </span>
         </button>
 
         <div className="flex flex-wrap items-center gap-2 rounded-b-lg border-x border-b border-zinc-200 px-4 py-2.5">
