@@ -41,23 +41,23 @@ const typeConfig: Record<ChangeEntry["type"], TypeConfig> = {
   feature: {
     label: "Feature",
     icon: SparklesIcon,
-    color: "text-teal-700",
-    bg: "bg-teal-50",
-    dot: "bg-teal-500",
+    color: "text-zinc-600",
+    bg: "bg-zinc-100",
+    dot: "bg-zinc-400",
   },
   improvement: {
     label: "Improvement",
     icon: WrenchIcon,
-    color: "text-blue-700",
-    bg: "bg-blue-50",
-    dot: "bg-blue-500",
+    color: "text-zinc-600",
+    bg: "bg-zinc-100",
+    dot: "bg-zinc-400",
   },
   fix: {
     label: "Fix",
     icon: BugIcon,
-    color: "text-amber-700",
-    bg: "bg-amber-50",
-    dot: "bg-amber-500",
+    color: "text-zinc-600",
+    bg: "bg-zinc-100",
+    dot: "bg-zinc-400",
   },
 };
 
@@ -270,11 +270,7 @@ export function ChangeLogList() {
                     "rounded-lg border p-5 transition-colors",
                     isCelebration
                       ? cn(palette!.cardBg, palette!.cardBorder, palette!.cardHover)
-                      : cn(
-                          "border-zinc-200 bg-white hover:border-zinc-300",
-                          index === 0 &&
-                            "border-teal-200 bg-teal-50/30 hover:border-teal-300"
-                        )
+                      : "border-zinc-200 bg-white hover:border-zinc-300"
                   )}
                 >
                   {/* Mobile date */}
