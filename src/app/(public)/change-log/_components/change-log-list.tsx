@@ -22,28 +22,21 @@ type ChangeEntry = {
   image: string | null;
 };
 
-const typeConfig: Record<
-  ChangeEntry["type"],
-  {
-    label: string;
-    icon: React.ElementType;
-    color: string;
-    bg: string;
-    dot: string;
-    solid?: boolean;
-    solidBg?: string;
-    solidBorder?: string;
-  }
-> = {
+type TypeConfig = {
+  label: string;
+  icon: React.ElementType;
+  color: string;
+  bg: string;
+  dot: string;
+};
+
+const typeConfig: Record<ChangeEntry["type"], TypeConfig> = {
   celebration: {
     label: "Milestone",
     icon: TrophyIcon,
-    color: "text-amber-200",
+    color: "text-white/80",
     bg: "bg-white/15",
     dot: "bg-zinc-900",
-    solid: true,
-    solidBg: "bg-zinc-900",
-    solidBorder: "border-zinc-800",
   },
   feature: {
     label: "Feature",
@@ -68,6 +61,160 @@ const typeConfig: Record<
   },
 };
 
+/* Per-project celebration card colors */
+type CelebrationPalette = {
+  cardBg: string;
+  cardBorder: string;
+  cardHover: string;
+  dot: string;
+  dotRing: string;
+  title: string;
+  desc: string;
+  meta: string;
+  separator: string;
+  badgeBg: string;
+  badgeText: string;
+  btnBg: string;
+  btnBorder: string;
+  btnText: string;
+  btnHover: string;
+  imgBorder: string;
+};
+
+const projectCelebrationColors: Record<string, CelebrationPalette> = {
+  IBZIM: {
+    cardBg: "bg-amber-500",
+    cardBorder: "border-amber-400",
+    cardHover: "hover:border-amber-300",
+    dot: "bg-amber-500",
+    dotRing: "ring-amber-200",
+    title: "text-amber-950",
+    desc: "text-amber-900/70",
+    meta: "text-amber-800/60",
+    separator: "text-amber-400",
+    badgeBg: "bg-amber-600/30",
+    badgeText: "text-amber-950",
+    btnBg: "bg-amber-600",
+    btnBorder: "border-amber-700",
+    btnText: "text-white",
+    btnHover: "hover:bg-amber-700",
+    imgBorder: "border-amber-400",
+  },
+  "Zim Developers Blog": {
+    cardBg: "bg-teal-600",
+    cardBorder: "border-teal-500",
+    cardHover: "hover:border-teal-400",
+    dot: "bg-teal-600",
+    dotRing: "ring-teal-200",
+    title: "text-white",
+    desc: "text-teal-100/80",
+    meta: "text-teal-200/60",
+    separator: "text-teal-400",
+    badgeBg: "bg-white/15",
+    badgeText: "text-teal-100",
+    btnBg: "bg-teal-700",
+    btnBorder: "border-teal-800",
+    btnText: "text-white",
+    btnHover: "hover:bg-teal-800",
+    imgBorder: "border-teal-400",
+  },
+  "Xfinity Pros Inc.": {
+    cardBg: "bg-sky-600",
+    cardBorder: "border-sky-500",
+    cardHover: "hover:border-sky-400",
+    dot: "bg-sky-600",
+    dotRing: "ring-sky-200",
+    title: "text-white",
+    desc: "text-sky-100/80",
+    meta: "text-sky-200/60",
+    separator: "text-sky-400",
+    badgeBg: "bg-white/15",
+    badgeText: "text-sky-100",
+    btnBg: "bg-sky-700",
+    btnBorder: "border-sky-800",
+    btnText: "text-white",
+    btnHover: "hover:bg-sky-800",
+    imgBorder: "border-sky-400",
+  },
+  TheWord: {
+    cardBg: "bg-violet-600",
+    cardBorder: "border-violet-500",
+    cardHover: "hover:border-violet-400",
+    dot: "bg-violet-600",
+    dotRing: "ring-violet-200",
+    title: "text-white",
+    desc: "text-violet-100/80",
+    meta: "text-violet-200/60",
+    separator: "text-violet-400",
+    badgeBg: "bg-white/15",
+    badgeText: "text-violet-100",
+    btnBg: "bg-violet-700",
+    btnBorder: "border-violet-800",
+    btnText: "text-white",
+    btnHover: "hover:bg-violet-800",
+    imgBorder: "border-violet-400",
+  },
+  "Rapid Range": {
+    cardBg: "bg-rose-600",
+    cardBorder: "border-rose-500",
+    cardHover: "hover:border-rose-400",
+    dot: "bg-rose-600",
+    dotRing: "ring-rose-200",
+    title: "text-white",
+    desc: "text-rose-100/80",
+    meta: "text-rose-200/60",
+    separator: "text-rose-400",
+    badgeBg: "bg-white/15",
+    badgeText: "text-rose-100",
+    btnBg: "bg-rose-700",
+    btnBorder: "border-rose-800",
+    btnText: "text-white",
+    btnHover: "hover:bg-rose-800",
+    imgBorder: "border-rose-400",
+  },
+  "Peya Peya": {
+    cardBg: "bg-emerald-600",
+    cardBorder: "border-emerald-500",
+    cardHover: "hover:border-emerald-400",
+    dot: "bg-emerald-600",
+    dotRing: "ring-emerald-200",
+    title: "text-white",
+    desc: "text-emerald-100/80",
+    meta: "text-emerald-200/60",
+    separator: "text-emerald-400",
+    badgeBg: "bg-white/15",
+    badgeText: "text-emerald-100",
+    btnBg: "bg-emerald-700",
+    btnBorder: "border-emerald-800",
+    btnText: "text-white",
+    btnHover: "hover:bg-emerald-800",
+    imgBorder: "border-emerald-400",
+  },
+};
+
+const defaultCelebrationColors: CelebrationPalette = {
+  cardBg: "bg-zinc-800",
+  cardBorder: "border-zinc-700",
+  cardHover: "hover:border-zinc-600",
+  dot: "bg-zinc-700",
+  dotRing: "ring-zinc-300",
+  title: "text-white",
+  desc: "text-zinc-300",
+  meta: "text-zinc-400",
+  separator: "text-zinc-600",
+  badgeBg: "bg-white/15",
+  badgeText: "text-zinc-200",
+  btnBg: "bg-zinc-700",
+  btnBorder: "border-zinc-600",
+  btnText: "text-zinc-200",
+  btnHover: "hover:bg-zinc-600",
+  imgBorder: "border-zinc-600",
+};
+
+function getCelebrationPalette(project: string): CelebrationPalette {
+  return projectCelebrationColors[project] ?? defaultCelebrationColors;
+}
+
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
     year: "numeric",
@@ -87,7 +234,10 @@ export function ChangeLogList() {
           const TypeIcon = config.icon;
           const isExternal = entry.ctaUrl?.startsWith("http");
           const isLast = index === entries.length - 1;
-          const isCelebration = config.solid === true;
+          const isCelebration = entry.type === "celebration";
+          const palette = isCelebration
+            ? getCelebrationPalette(entry.project)
+            : null;
 
           return (
             <div key={entry.id} className="flex gap-4 sm:gap-6">
@@ -104,9 +254,8 @@ export function ChangeLogList() {
                   className={cn(
                     "z-10 mt-1.5 size-3 shrink-0 rounded-full border-2",
                     isCelebration
-                      ? "border-zinc-900 ring-2 ring-zinc-300"
-                      : "border-white",
-                    config.dot
+                      ? cn("border-white ring-2", palette!.dot, palette!.dotRing)
+                      : cn("border-white", config.dot)
                   )}
                 />
                 {!isLast && (
@@ -120,11 +269,10 @@ export function ChangeLogList() {
                   className={cn(
                     "rounded-lg border p-5 transition-colors",
                     isCelebration
-                      ? cn(config.solidBg, config.solidBorder, "hover:border-zinc-600")
+                      ? cn(palette!.cardBg, palette!.cardBorder, palette!.cardHover)
                       : cn(
                           "border-zinc-200 bg-white hover:border-zinc-300",
                           index === 0 &&
-                            !isCelebration &&
                             "border-teal-200 bg-teal-50/30 hover:border-teal-300"
                         )
                   )}
@@ -133,7 +281,7 @@ export function ChangeLogList() {
                   <span
                     className={cn(
                       "mb-2 block text-xs sm:hidden",
-                      isCelebration ? "text-zinc-400" : "text-zinc-400"
+                      isCelebration ? palette!.meta : "text-zinc-400"
                     )}
                   >
                     {formatDate(entry.date)}
@@ -143,19 +291,24 @@ export function ChangeLogList() {
                     <span
                       className={cn(
                         "text-xs font-medium",
-                        isCelebration ? "text-zinc-400" : "text-zinc-500"
+                        isCelebration ? palette!.meta : "text-zinc-500"
                       )}
                     >
                       {entry.project}
                     </span>
-                    <span className={isCelebration ? "text-zinc-600" : "text-zinc-300"}>
+                    <span
+                      className={
+                        isCelebration ? palette!.separator : "text-zinc-300"
+                      }
+                    >
                       {"/"}
                     </span>
                     <span
                       className={cn(
                         "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium",
-                        config.bg,
-                        config.color
+                        isCelebration
+                          ? cn(palette!.badgeBg, palette!.badgeText)
+                          : cn(config.bg, config.color)
                       )}
                     >
                       <TypeIcon className="size-3" />
@@ -166,7 +319,7 @@ export function ChangeLogList() {
                   <h3
                     className={cn(
                       "mt-2 text-sm font-semibold",
-                      isCelebration ? "text-white" : "text-zinc-900"
+                      isCelebration ? palette!.title : "text-zinc-900"
                     )}
                   >
                     {entry.title}
@@ -175,7 +328,7 @@ export function ChangeLogList() {
                   <p
                     className={cn(
                       "mt-1 text-sm leading-relaxed",
-                      isCelebration ? "text-zinc-400" : "text-zinc-500"
+                      isCelebration ? palette!.desc : "text-zinc-500"
                     )}
                   >
                     {entry.description}
@@ -185,7 +338,9 @@ export function ChangeLogList() {
                     <div
                       className={cn(
                         "mt-4 overflow-hidden rounded-md border",
-                        isCelebration ? "border-zinc-700" : "border-zinc-200"
+                        isCelebration
+                          ? palette!.imgBorder
+                          : "border-zinc-200"
                       )}
                     >
                       <Image
@@ -205,7 +360,12 @@ export function ChangeLogList() {
                       className={cn(
                         "mt-4 inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition-colors",
                         isCelebration
-                          ? "border-zinc-600 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white"
+                          ? cn(
+                              palette!.btnBg,
+                              palette!.btnBorder,
+                              palette!.btnText,
+                              palette!.btnHover
+                            )
                           : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900"
                       )}
                     >
