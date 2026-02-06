@@ -47,7 +47,9 @@ const statusConfig: Record<
     barColor: string;
     progressWidth: string;
     overviewBg: string;
-    overviewIcon: string;
+    overviewText: string;
+    overviewCountBg: string;
+    overviewCountText: string;
   }
 > = {
   "Recently Started": {
@@ -57,7 +59,9 @@ const statusConfig: Record<
     barColor: "bg-zinc-500",
     progressWidth: "w-1/5",
     overviewBg: "bg-zinc-100",
-    overviewIcon: "text-zinc-500",
+    overviewText: "text-zinc-600",
+    overviewCountBg: "bg-zinc-200",
+    overviewCountText: "text-zinc-700",
   },
   "Halfway through": {
     icon: LoaderCircleIcon,
@@ -66,7 +70,9 @@ const statusConfig: Record<
     barColor: "bg-teal-500",
     progressWidth: "w-1/2",
     overviewBg: "bg-teal-50",
-    overviewIcon: "text-teal-600",
+    overviewText: "text-teal-700",
+    overviewCountBg: "bg-teal-200",
+    overviewCountText: "text-teal-800",
   },
   "Almost Done": {
     icon: RocketIcon,
@@ -75,7 +81,9 @@ const statusConfig: Record<
     barColor: "bg-teal-400",
     progressWidth: "w-4/5",
     overviewBg: "bg-teal-50",
-    overviewIcon: "text-teal-500",
+    overviewText: "text-teal-600",
+    overviewCountBg: "bg-teal-200",
+    overviewCountText: "text-teal-800",
   },
   "Collect User Feedback": {
     icon: MessageSquareIcon,
@@ -84,7 +92,9 @@ const statusConfig: Record<
     barColor: "bg-amber-400",
     progressWidth: "w-full",
     overviewBg: "bg-amber-50",
-    overviewIcon: "text-amber-600",
+    overviewText: "text-amber-700",
+    overviewCountBg: "bg-amber-200",
+    overviewCountText: "text-amber-800",
   },
 };
 
@@ -136,40 +146,31 @@ export function ProjectsStatusCard() {
           <ChevronDownIcon className="size-4 text-zinc-500 transition-transform group-hover:text-zinc-400" />
         </button>
 
-        <div className="grid grid-cols-2 rounded-b-lg border-x border-b border-zinc-200 lg:grid-cols-4">
-          {statuses.map((status, i) => {
+        <div className="flex flex-wrap items-center gap-2 rounded-b-lg border-x border-b border-zinc-200 px-4 py-2.5">
+          {statuses.map((status) => {
             const config = statusConfig[status];
-            const StatusIcon = config.icon;
             const count = statusCounts[status];
 
             return (
-              <div
+              <span
                 key={status}
                 className={cn(
-                  "flex items-center gap-3 px-4 py-3",
-                  i < 2 && "border-b border-zinc-200 lg:border-b-0",
-                  i % 2 === 0 && "border-r border-zinc-200",
-                  i === 1 && "lg:border-r lg:border-zinc-200",
-                  i === 2 && "lg:border-r lg:border-zinc-200"
+                  "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium",
+                  config.overviewBg,
+                  config.overviewText
                 )}
               >
+                {status}
                 <span
                   className={cn(
-                    "flex size-8 shrink-0 items-center justify-center rounded-full",
-                    config.overviewBg
+                    "flex size-4 items-center justify-center rounded-full text-[10px] font-semibold",
+                    config.overviewCountBg,
+                    config.overviewCountText
                   )}
                 >
-                  <StatusIcon className={cn("size-3.5", config.overviewIcon)} />
+                  {count}
                 </span>
-                <div className="flex flex-col">
-                  <span className="text-lg font-semibold text-zinc-900">
-                    {count}
-                  </span>
-                  <span className="text-[11px] leading-tight text-zinc-500">
-                    {status}
-                  </span>
-                </div>
-              </div>
+              </span>
             );
           })}
         </div>
