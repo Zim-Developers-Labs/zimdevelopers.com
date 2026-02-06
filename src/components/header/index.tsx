@@ -8,9 +8,10 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Divide } from 'lucide-react';
 import { useGitHubStars } from '@/hooks/github-stars';
 
 export default function Header() {
@@ -51,6 +52,10 @@ export default function Header() {
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/rank-check">Check Your Rank</Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <Link href="/change-log">Change Log</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

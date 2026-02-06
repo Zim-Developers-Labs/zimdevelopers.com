@@ -1,0 +1,112 @@
+[
+  {
+    "id": "change-001",
+    "project": "Zim Developers Blog",
+    "title": "Launched the Change Log",
+    "description": "A central hub to track all major changes across Zim Developers projects. Stay informed on what's new, what's improved, and what's coming next.",
+    "date": "2026-02-06",
+    "type": "feature",
+    "ctaLabel": "View Change Log",
+    "ctaUrl": "/change-log",
+    "image": null
+  },
+  {
+    "id": "change-002",
+    "project": "Zim Developers Blog",
+    "title": "New Ranking System",
+    "description": "Introduced a community ranking system that rewards active contributors. Climb through ranks from Contributor to Ambassador and unlock access to more projects.",
+    "date": "2026-02-01",
+    "type": "feature",
+    "ctaLabel": "Check Your Rank",
+    "ctaUrl": "/rank-check",
+    "image": null
+  },
+  {
+    "id": "change-003",
+    "project": "Xfinity Pros Inc.",
+    "title": "Redesigned Landing Page",
+    "description": "Completely overhauled the Xfinity Pros landing page with a modern, clean design focused on conversion and clarity. New hero section, testimonials, and pricing layout.",
+    "date": "2026-01-28",
+    "type": "improvement",
+    "ctaLabel": "Visit Xfinity Pros",
+    "ctaUrl": "https://www.xfinitypros.com/",
+    "image": null
+  },
+  {
+    "id": "change-008",
+    "project": "IBZIM",
+    "title": "Introduced Search Engine",
+    "description": "IBZIM now has a fully functional search engine, making it easier than ever to find exactly what you need across the platform.",
+    "date": "2026-01-26",
+    "type": "celebration",
+    "ctaLabel": "Try It Out",
+    "ctaUrl": "https://ibzim.com",
+    "image": null
+  },
+  {
+    "id": "change-004",
+    "project": "TheWord",
+    "title": "Added Daily Devotional Feature",
+    "description": "Users can now receive a curated daily devotional directly on the homepage. Each devotional includes scripture references and a short reflection.",
+    "date": "2026-01-20",
+    "type": "feature",
+    "ctaLabel": null,
+    "ctaUrl": null,
+    "image": null
+  },
+  {
+    "id": "change-005",
+    "project": "IBZIM",
+    "title": "Search Performance Improvements",
+    "description": "Optimized the search indexing pipeline for faster results. Average query response time reduced by 40%. Also improved result relevance scoring.",
+    "date": "2026-01-15",
+    "type": "improvement",
+    "ctaLabel": null,
+    "ctaUrl": null,
+    "image": null
+  },
+  {
+    "id": "change-009",
+    "project": "IBZIM",
+    "title": "Registered as a Company",
+    "description": "ibzim.com is now officially registered as a company. A huge milestone for the platform and the team behind it.",
+    "date": "2026-01-14",
+    "type": "celebration",
+    "ctaLabel": "View Certificate",
+    "ctaUrl": "#",
+    "image": null
+  },
+  {
+    "id": "change-006",
+    "project": "Rapid Range",
+    "title": "Cart & Checkout Flow",
+    "description": "Implemented the full shopping cart and checkout experience. Users can now add products, manage quantities, and complete purchases through a streamlined flow.",
+    "date": "2026-01-10",
+    "type": "feature",
+    "ctaLabel": null,
+    "ctaUrl": null,
+    "image": null
+  },
+  {
+    "id": "change-010",
+    "project": "Xfinity Pros Inc.",
+    "title": "Landed a New Client",
+    "description": "We designed a website for Moddong Investments.",
+    "date": "2026-01-08",
+    "type": "celebration",
+    "ctaLabel": "View Website",
+    "ctaUrl": "https://www.moddong.co.zw",
+    "image": null
+  },
+  {
+    "id": "change-007",
+    "project": "Peya Peya",
+    "title": "Security Audit Completed",
+    "description": "Completed a comprehensive security audit of the banking platform. Implemented additional encryption layers and improved session management across all endpoints.",
+    "date": "2026-01-05",
+    "type": "fix",
+    "ctaLabel": null,
+    "ctaUrl": null,
+    "image": null
+  }
+]
