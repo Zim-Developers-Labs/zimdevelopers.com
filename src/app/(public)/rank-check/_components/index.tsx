@@ -7,6 +7,11 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
 import { getContributorRank } from '../_actions/actions';
+import { getCurrentRank, getRankTierColor } from '@/components/ranking/ranks';
+import { RankIcon } from '@/components/ranking/rank-icon';
+import { Linkify } from '@/lib/utils';
+import RanksBenefitsDialog from '@/components/ranking/benefits-dialog';
+import { toast } from 'sonner';
 
 interface UserData {
   username: string;
@@ -67,6 +72,8 @@ export default function RankCheckPageComponents() {
     link.href = canvas.toDataURL('image/png');
     link.click();
   };
+
+  const currentRank = userData ? getCurrentRank(userData.impactPoints) : null;
 
   return (
     <div className="flex min-h-[calc(100vh-120px)] items-center justify-center bg-zinc-900 p-4">
@@ -144,7 +151,6 @@ export default function RankCheckPageComponents() {
                     {new Date().getFullYear()}
                   </span>
                 </div>
-
                 <div className="flex items-center gap-4">
                   <img
                     src={userData.avatar || '/placeholder.svg'}
@@ -168,6 +174,31 @@ export default function RankCheckPageComponents() {
                     <p className="font-mono text-xs text-zinc-400">rank</p>
                   </div>
                 </div>
+                {/* Rank Info Bar */}
+                {currentRank && (
+                  <div className="mt-4 flex items-center justify-between rounded-md border border-t border-zinc-700 bg-zinc-800 px-5 py-3">
+                    <div className="flex items-center gap-2.5">
+                      <RankIcon
+                        id={Linkify(currentRank.name)}
+                        height={32}
+                        width={32}
+                      />
+                      <div>
+                        <p
+                          className="text-xs font-bold"
+                          style={{ color: getRankTierColor(currentRank.name) }}
+                        >
+                          {currentRank.name}
+                        </p>
+                        <p className="font-mono text-[9px] text-zinc-500">
+                          {currentRank.minPoints.toLocaleString()} -{' '}
+                          {currentRank.maxPoints.toLocaleString()} pts
+                        </p>
+                      </div>
+                    </div>
+                    <RanksBenefitsDialog impactPoints={userData.impactPoints} />
+                  </div>
+                )}
               </div>
 
               {/* Card Stats - Dark */}
@@ -222,7 +253,10 @@ export default function RankCheckPageComponents() {
                 Reset
               </Button>
               <Button
-                onClick={downloadCard}
+                onClick={() => {
+                  toast.error('Download feature is currently unavailable.');
+                }}
+                // onClick={downloadCard}
                 className="h-12 flex-1 rounded-xl bg-white text-zinc-900 hover:bg-zinc-100"
               >
                 <Download className="mr-2 h-4 w-4" />

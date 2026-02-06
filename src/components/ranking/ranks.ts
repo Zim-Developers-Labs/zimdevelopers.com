@@ -227,3 +227,20 @@ export function getCurrentRank(points: number) {
     ) || ranks[ranks.length - 1]
   );
 }
+
+export function getRankTierColor(rankName: string): string {
+  const name = rankName.toLowerCase();
+  if (name === 'no rank') return '#71717a';
+  if (name.startsWith('new comer')) return '#22d3ee';
+  if (name.startsWith('contributor')) return '#a78bfa';
+  if (name.startsWith('leader')) return '#f59e0b';
+  if (name.startsWith('ambassador')) return '#ef4444';
+  if (name === 'executive') return '#ec4899';
+  return '#71717a';
+}
+
+export function getPreviousRankBenefits(points: number) {
+  const currentRank = getCurrentRank(points);
+  const currentIndex = ranks.findIndex((r) => r.name === currentRank.name);
+  return ranks.slice(0, currentIndex);
+}

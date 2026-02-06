@@ -26,3 +26,16 @@ export const truncateOnWord = (
 
   return truncatedText;
 };
+
+export function Linkify(titleText: string) {
+  const linkified =
+    titleText?.toLowerCase &&
+    titleText
+      .toLowerCase()
+      .replace(/[^\x00-\x7F]/g, '')
+      .replace(/'/g, '-')
+      .replace(/\s+/g, '-')
+      .replace(/[?!.]/g, '');
+
+  return linkified;
+}

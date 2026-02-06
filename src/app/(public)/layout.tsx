@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import '../globals.css';
 import LaunchBanner from '@/components/banners.tsx/launch';
 import Header from '@/components/header';
+import { Toaster } from 'sonner';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <LaunchBanner />
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );

@@ -128,3 +128,22 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Dark themed scrollbar */
+.scrollbar-dark::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-dark::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background-color: #3f3f46;
+  border-radius: 3px;
+}
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b;
+}
+.scrollbar-dark {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
