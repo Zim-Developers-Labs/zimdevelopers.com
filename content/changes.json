@@ -33,6 +33,17 @@
     "image": null
   },
   {
+    "id": "change-008",
+    "project": "IBZIM",
+    "title": "Introduced Search Engine",
+    "description": "IBZIM now has a fully functional search engine, making it easier than ever to find exactly what you need across the platform.",
+    "date": "2026-01-26",
+    "type": "celebration",
+    "ctaLabel": "Try It Out",
+    "ctaUrl": "https://ibzim.com",
+    "image": null
+  },
+  {
     "id": "change-004",
     "project": "TheWord",
     "title": "Added Daily Devotional Feature",
@@ -55,6 +66,17 @@
     "image": null
   },
   {
+    "id": "change-009",
+    "project": "IBZIM",
+    "title": "Registered as a Company",
+    "description": "ibzim.com is now officially registered as a company. A huge milestone for the platform and the team behind it.",
+    "date": "2026-01-14",
+    "type": "celebration",
+    "ctaLabel": "View Certificate",
+    "ctaUrl": "#",
+    "image": null
+  },
+  {
     "id": "change-006",
     "project": "Rapid Range",
     "title": "Cart & Checkout Flow",
@@ -63,6 +85,17 @@
     "type": "feature",
     "ctaLabel": null,
     "ctaUrl": null,
+    "image": null
+  },
+  {
+    "id": "change-010",
+    "project": "Xfinity Pros Inc.",
+    "title": "Landed a New Client",
+    "description": "We designed a website for Moddong Investments.",
+    "date": "2026-01-08",
+    "type": "celebration",
+    "ctaLabel": "View Website",
+    "ctaUrl": "https://www.moddong.co.zw",
     "image": null
   },
   {
