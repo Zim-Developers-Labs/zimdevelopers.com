@@ -210,7 +210,7 @@ export const projects = [
     name: 'Xfinity Pros Inc.',
     homepage: 'https://www.xfinitypros.com/',
     domain: 'xfinitypros.com',
-    description: 'A web services provider',
+    description: 'A cloud services provider',
     minimumRank: 'leader-1',
     accessType: 'Private Access',
     githubRepo: '#',

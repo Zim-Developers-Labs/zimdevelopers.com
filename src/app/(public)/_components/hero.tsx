@@ -4,14 +4,13 @@ import heroBg from '@/assets/hero.webp';
 import Container from '@/components/container';
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
+import { whatsappGroupLink } from '@/lib/constants';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePageHero() {
-  const groupLink = 'https://chat.whatsapp.com/FfXS39iLv7k36jrskKjOfX';
-
   const handleButtonClick = () => {
-    window.open(groupLink, '_blank');
+    window.open(whatsappGroupLink, '_blank');
   };
 
   return (

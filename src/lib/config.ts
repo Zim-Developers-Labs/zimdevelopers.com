@@ -10,7 +10,7 @@ export const siteConfig = {
     web: `${DOMAIN_URL}`,
     twitter: `https://twitter.com/@zimdevlabs`,
     instagram: `https://www.instagram.com/zimdevlabs`,
-    linkedin: `https://www.linkedin.com/company/zimdevlabs`,
+    linkedin: `https://www.linkedin.com/company/zim-developers-labs`,
     github: `https://github.com/orgs/Zim-Developers-Labs/repositories`,
     youtube: `https://www.youtube.com/@zimdevlabs`,
     facebook: `https://www.facebook.com/zimdevlabs`,

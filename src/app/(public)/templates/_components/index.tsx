@@ -40,6 +40,7 @@ import {
   PackageOpen,
 } from 'lucide-react';
 import { Platform, templates } from './templates';
+import { whatsappGroupLink } from '@/lib/constants';
 
 const useCasesByPlatform: Record<
   Platform,
@@ -135,10 +136,8 @@ export default function TemplatesPageComponents() {
     setActiveFramework('All');
   };
 
-  const groupLink = 'https://chat.whatsapp.com/FfXS39iLv7k36jrskKjOfX';
-
   const handleButtonClick = () => {
-    window.open(groupLink, '_blank');
+    window.open(whatsappGroupLink, '_blank');
   };
 
   return (

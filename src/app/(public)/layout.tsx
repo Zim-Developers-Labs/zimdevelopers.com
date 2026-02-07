@@ -4,6 +4,7 @@ import '../globals.css';
 import LaunchBanner from '@/components/banners.tsx/launch';
 import Header from '@/components/header';
 import { Toaster } from 'sonner';
+import Footer from '@/components/footer';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Toaster />
+        <Footer />
       </body>
     </html>
   );

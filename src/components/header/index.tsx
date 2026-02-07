@@ -13,12 +13,11 @@ import {
 } from '../ui/dropdown-menu';
 import { ChevronDown, Divide } from 'lucide-react';
 import { useGitHubStars } from '@/hooks/github-stars';
+import { whatsappGroupLink } from '@/lib/constants';
 
 export default function Header() {
-  const groupLink = 'https://chat.whatsapp.com/FfXS39iLv7k36jrskKjOfX';
-
   const handleButtonClick = () => {
-    window.open(groupLink, '_blank');
+    window.open(whatsappGroupLink, '_blank');
   };
 
   const stars = useGitHubStars('Zim-Developers-Labs/theword.fyi');
