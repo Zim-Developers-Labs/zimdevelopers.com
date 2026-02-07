@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import '../globals.css';
 import LaunchBanner from '@/components/banners.tsx/launch';
+import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { Toaster } from 'sonner';
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <LaunchBanner />
         <Header />
         {children}
+        <Footer />
         <Toaster />
       </body>
     </html>
