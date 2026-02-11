@@ -141,7 +141,7 @@ export default function ZimDevLabsVision() {
               </p>
               <div className="mt-6 flex items-center gap-x-6">
                 <Link
-                  href="#"
+                  href="/docs/zim-developers-labs-brochure.pdf"
                   className="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500"
                 >
                   Download Brochure

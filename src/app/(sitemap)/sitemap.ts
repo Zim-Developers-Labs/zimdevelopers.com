@@ -55,11 +55,6 @@ async function generateMiscSitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       priority: 1,
     },
-    {
-      url: `${siteConfig.url.web}/ranking-system`,
-      lastModified: new Date(),
-      priority: 0.5,
-    },
   ];
 }
 

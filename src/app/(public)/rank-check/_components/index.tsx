@@ -47,11 +47,6 @@ export default function RankCheckPageComponents() {
     }
 
     if (result.data) {
-      if (result.data.impactPoints === 0) {
-        setError('User has 0 impact in the community');
-        setLoading(false);
-        return;
-      }
       setUserData(result.data);
     }
 
@@ -162,14 +157,21 @@ export default function RankCheckPageComponents() {
                     <p className="text-lg font-bold text-zinc-900">
                       @{userData.username}
                     </p>
-                    <p className="flex items-center gap-1 text-xs font-medium text-green-600">
-                      <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-                      verified contributor
-                    </p>
+                    {userData.impactPoints > 0 ? (
+                      <p className="flex items-center gap-1 text-xs font-medium text-green-600">
+                        <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                        verified contributor
+                      </p>
+                    ) : (
+                      <p className="flex items-center gap-1 text-xs font-medium text-red-600">
+                        <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                        unranked user
+                      </p>
+                    )}
                   </div>
                   <div className="text-right">
                     <p className="text-4xl font-black text-zinc-900">
-                      #{userData.rank}
+                      {userData.impactPoints > 0 ? `#${userData.rank}` : '?'}
                     </p>
                     <p className="font-mono text-xs text-zinc-400">rank</p>
                   </div>
@@ -252,16 +254,28 @@ export default function RankCheckPageComponents() {
                 <RotateCcw className="mr-2 h-4 w-4" />
                 Reset
               </Button>
-              <Button
-                onClick={() => {
-                  toast.error('Download feature is currently unavailable.');
-                }}
-                // onClick={downloadCard}
-                className="h-12 flex-1 rounded-xl bg-white text-zinc-900 hover:bg-zinc-100"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download
-              </Button>
+              {userData.impactPoints > 0 ? (
+                <Button
+                  onClick={() => {
+                    toast.error('Download feature is currently unavailable.');
+                  }}
+                  // onClick={downloadCard}
+                  className="h-12 flex-1 rounded-xl bg-white text-zinc-900 hover:bg-zinc-100"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    toast.error('User does not have enough data for a card.');
+                  }}
+                  className="h-12 flex-1 rounded-xl bg-white text-zinc-900 hover:bg-zinc-100"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download
+                </Button>
+              )}
             </div>
           </div>
         )}

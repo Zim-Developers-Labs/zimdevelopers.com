@@ -66,10 +66,10 @@ export default function RanksDialog({
           </div>
           <div className="px-4 py-4">
             <Link
-              href="/ranking-system"
+              href="/docs/zim-developers-labs-brochure.pdf"
               className="block w-full rounded-md border border-zinc-200 py-2 text-center text-sm text-zinc-600 hover:bg-zinc-200"
             >
-              Details
+              Download Brochure
             </Link>
           </div>
         </div>
