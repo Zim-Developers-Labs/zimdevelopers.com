@@ -7,6 +7,7 @@ import { Figure, Figcaption } from './mdx-components/figure';
 import { P } from './mdx-components/p';
 import Headings from './mdx-components/headings';
 import { Li, Ol, Ul } from './mdx-components/list';
+import annotationLink from './mdx-components/a';
 
 // You can define custom styles for elements here if needed
 const components = {
@@ -18,6 +19,7 @@ const components = {
   ul: Ul,
   ol: Ol,
   li: Li,
+  a: annotationLink,
 };
 
 type MdRendererType = {

@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from 'clsx';
+import slugify from 'slugify';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -38,4 +39,15 @@ export function Linkify(titleText: string) {
       .replace(/[?!.]/g, '');
 
   return linkified;
+}
+
+export function convertToSlug(
+  text?: string,
+  { fallback }: { fallback?: string } = { fallback: 'top-level' },
+) {
+  if (!text) return fallback;
+  return slugify(text.trim(), {
+    lower: true,
+    remove: /[^a-zA-Z0-9 ]/g,
+  });
 }

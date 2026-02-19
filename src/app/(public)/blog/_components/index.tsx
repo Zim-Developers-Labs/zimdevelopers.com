@@ -1,7 +1,7 @@
 import Container from '@/components/container';
 import { Badge } from '@/components/ui/badge';
 import { ArticleType } from '@/lib/blog';
-import { Clock } from 'lucide-react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,36 +9,35 @@ function ArticleCard({ article }: { article: ArticleType }) {
   return (
     <li>
       <Link href={`/blog/${article.id}`} className="group block">
-        <div className="relative overflow-hidden rounded-2xl bg-black p-4">
-          <div className="absolute inset-0 p-2">
+        <article className="overflow-hidden rounded-lg border border-zinc-200 bg-white transition-shadow group-hover:shadow-md">
+          <div className="aspect-video overflow-hidden">
             <Image
               src={article.imageUrl || '/placeholder.svg'}
-              alt=""
+              alt={article.name}
               width={600}
               height={400}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>
-          <div className="relative m-2 rounded-xl border border-white/20 bg-white/95 p-5 backdrop-blur-md transition-all group-hover:bg-white/90">
-            <div className="mb-3 flex items-center gap-2">
-              <Clock className="h-4 w-4 text-zinc-500" />
-              <span className="text-sm text-zinc-600">
+          <div className="p-4">
+            <div className="mb-2 flex items-center gap-2">
+              <time className="text-xs text-zinc-500">
                 {article.formattedCreatedAt}
-              </span>
+              </time>
               {article.isDraft && (
-                <Badge variant="secondary" className="bg-white/50">
+                <Badge variant="secondary" className="text-xs">
                   Draft
                 </Badge>
               )}
             </div>
-            <h3 className="mb-2 text-lg font-bold text-zinc-900">
+            <h3 className="mb-1 text-base font-semibold text-zinc-900 group-hover:text-zinc-700">
               {article.name}
             </h3>
-            <p className="line-clamp-2 text-sm text-zinc-700">
+            <p className="line-clamp-2 text-sm text-zinc-500">
               {article.about}
             </p>
           </div>
-        </div>
+        </article>
       </Link>
     </li>
   );
@@ -62,7 +61,7 @@ export default function BlogPageComponents({
       </Container>
       <div className="screen-line-after h-6 border-y border-zinc-200 before:absolute before:-z-1 before:h-6 before:w-screen before:bg-[repeating-linear-gradient(315deg,var(--color-zinc-300)_0,var(--color-zinc-300)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px]" />
       <Container className="py-12">
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}

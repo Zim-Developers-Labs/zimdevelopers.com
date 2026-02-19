@@ -11,5 +11,18 @@
     "imageUrl": "/covers/ai-in-zimbabwe.webp",
     "isDraft": false,
     "conflicts": []
+  },
+  {
+    "id": "how-to-contribute-on-zim-developers-labs",
+    "name": "How to make your first contribution",
+    "title": "How to make your first contribution on Zim Developers Labs",
+    "about": "Learn how to contribute to Zim Developers Labs, a platform for Zimbabwean developers. This guide covers the steps to make your first contribution, from signing up to submitting your work.",
+    "intro": "Making contributions to Zim Developers Labs is your ticket into the executive rank of the community where you get exclusive access and financial benefits. I'm not going to lie to you, even i have to go through the ranking steps which took roughly 3 months to get from New Comer 1 to Contributor 5.",
+    "updatedAt": "2026-02-11T22:09:36.361Z",
+    "createdAt": "2026-02-11T22:09:36.361Z",
+    "topic": "Open Source",
+    "imageUrl": "/covers/how-to-contribute-on-zim-developers-labs.webp",
+    "isDraft": true,
+    "conflicts": []
   }
 ]
