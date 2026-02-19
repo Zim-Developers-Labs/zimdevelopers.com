@@ -4,9 +4,9 @@ import { preparePageMetadata } from '@/lib/metadata';
 
 export const generateMetadata = (): Metadata =>
   preparePageMetadata({
-    title: 'Zim Developers Community',
+    title: 'Zim Developers Labs Community',
     description:
-      'A group of developers working towards building a vibrant developer community and ultimately a better tech ecosystem in Zimbabwe.',
+      'A group of developers working towards building a collaborative and profitable developer community and ultimately a better tech ecosystem in Zimbabwe.',
     pageUrl: '/',
     imageUrl: '/banner.webp',
   });
