@@ -60,13 +60,25 @@ export default function RanksDialog({
             <div>
               <div className="mb-1 text-sm text-zinc-600">Ambassador 1 - 5</div>
               <div className="text-xs text-zinc-600">
-                &gt; 10,000 Impact Points. Prominent Community figures
+                &gt; 10,000 - 19999 Impact Points. Prominent Community figures
+              </div>
+            </div>
+          </div>
+          <div className="flex gap-2 px-4 py-4 md:gap-4">
+            <div>
+              <RankIcon id="executive" height={50} width={50} />
+            </div>
+            <div>
+              <div className="mb-1 text-sm text-zinc-600">Executive</div>
+              <div className="text-xs text-zinc-600">
+                &gt; 20,000 Impact Points. Prominent Community figures
               </div>
             </div>
           </div>
           <div className="px-4 py-4">
             <Link
               href="/docs/zim-developers-labs-brochure.pdf"
+              target="_blank"
               className="block w-full rounded-md border border-zinc-200 py-2 text-center text-sm text-zinc-600 hover:bg-zinc-200"
             >
               Download Brochure
