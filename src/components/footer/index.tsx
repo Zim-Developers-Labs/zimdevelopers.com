@@ -13,6 +13,7 @@ const navigation = {
   organization: [
     { name: 'Vision', href: '/vision' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Admin Dashboard', href: 'https://admin.zimdevelopers.com' },
     { name: 'Whatsapp Group', href: whatsappGroupLink },
   ],
   social: [
